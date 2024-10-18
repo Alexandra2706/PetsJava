@@ -4,7 +4,7 @@
 
 #### Использование команды cat в Linux
 
-![Использование команды cat в Linux](linux_img\img1.png)
+![Использование команды cat в Linux](/linux_img\img1.png)
 
 #### Работа с директориями в Linux
 
