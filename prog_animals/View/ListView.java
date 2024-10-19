@@ -6,7 +6,7 @@ import Model.BasePet;
 
 public class ListView {
     public void printList(List<? extends BasePet> list) {
-        System.out.println("Список всех животных:");
+        System.out.println("----------Список всех животных----------");
         for (BasePet item : list) {
             System.out.println(item);
         }
@@ -14,9 +14,9 @@ public class ListView {
 
     public void printCommands(List<String> list) {
         if ((list == null) || list.isEmpty()) {
-            System.out.println("Животное не знает ни одной команды");
+            System.out.println("----------Животное не знает ни одной команды----------");
         } else {
-            System.out.println("Животное знает команды:");
+            System.out.println("----------Животное знает команды:----------");
             for (String item : list) {
                 System.out.println(item);
             }

@@ -49,7 +49,7 @@ public class Controller {
                 case 1 -> addNewPet();
                 case 2 -> getPetCommands();
                 case 3 -> teachNewCommands();
-                case 4 -> listView.printList(pets.getPetList()); // тут надо по дате рождения
+                case 4 -> listView.printList(pets.getPetList());
                 case 5 -> message.showMessage("Общее количество животных: " + getNumberPets());
                 case 0 -> end = true;
             }
@@ -127,15 +127,20 @@ public class Controller {
     public List<String> getList(Scanner scanner) {
         String commandsString = scanner.nextLine();
         commandsString = commandsString.replaceAll("[,+|\\s+]*$", "");
-        System.out.println("cS:" + commandsString);
         if (commandsString.length() == 0) {
             return new ArrayList<String>();
         }
-        List<String> commands = new ArrayList<>(Arrays.asList(commandsString.split(",")));
+        List<String> tempCommands = new ArrayList<>(Arrays.asList(commandsString.split(",")));
+        List<String> commands = new ArrayList<>();
+        for (String command : tempCommands) {
+            command = command.trim();
+            if (command != "") {
+                commands.add(command);
+            }
+        }
         Set<String> set = new LinkedHashSet<>(commands);
         commands.clear();
         commands.addAll(set);
-        System.out.println("commands:" + commands);
         return commands;
     }
 
